@@ -1,0 +1,266 @@
+*,
+*::before,
+*::after{
+    /* ye dono line slider thumb ko bahar hi nhi nikalne de rha tha */
+     /* overflow-x:hidden;
+     overflow-y: auto; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+/* declaration of global variable */
+/* try removing the semicolon after completing the project */
+:root {
+
+    --dk-violet: hsl(268, 75%, 9%);
+    --lt-violet: hsl(268, 47%, 21%);
+    --lt-violet2: hsl(281, 89%, 26%);
+    --vb-violet: hsl(285, 91%, 52%);
+    --vb-violet2: hsl(290, 70%, 36%);
+  
+    --vb-yellow: hsl(52, 100%, 62%);
+  
+  
+    --pl-white: hsl(0, 0%, 100%);
+  
+    --vb-cyan: hsl(176, 100%, 44%);
+    --vb-cyan2: hsl(177, 92%, 70%);
+    --dk-text: hsl(198, 20%, 13%);
+}
+body{
+    
+    width:100vw;
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    /* background: linear-gradient(90deg, rgba(92, 21, 120, 1) 0%, rgba(5, 120, 133, 1) 50%, rgba(120, 60, 60, 1) 100%); */
+    background: linear-gradient(231deg, rgba(22, 6, 40, 1) 0%, rgba(52, 28, 79, 1) 50%, rgba(88, 7, 125, 1) 100%);
+}
+.container {
+    width: 90%;
+    max-width: 450px;
+}
+
+h1{
+     
+    color: var(--pl-white);
+    opacity: 0.75;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom:2rem;
+}
+.displayContainer{
+    /* check why position is set to relative */
+    position:relative;
+    background-color: hsl(268, 75%, 9%);
+    border-radius: 1rem ;
+    border-bottom:0.35rem solid hsl(281, 89%, 26%);
+    margin:1 rem 0;
+    padding-top:0.35rem;
+
+}
+[PasswordDisplay]
+{
+    width:100%;
+    background-color: transparent;
+    outline:none;
+    /* outline border ke bahar banta hai */
+    border:none;
+    padding:1.15rem 1rem;
+    color:hsl(52, 100%, 62%);
+    font-weight:600;
+    font-size:1.5rem;
+    line-height: 30px;
+    letter-spacing: 1px;
+    padding-right:3.25rem;
+
+}
+[PasswordDisplay]::placeholder{
+    position:absolute;
+    top:50%;
+    left: 1.5rem;
+    font-size: 1.5rem;
+    line-height:30px;
+    /* ye color and color at line no 67 dono mein se koi bhi hatao dikkat ho rha hai, but line 67 wale se kya hi fadak padega */
+    color:var(--vb-yellow);
+    opacity: 0.65;
+    text-transform: uppercase;
+    transform: translateY(-50%);
+}
+.displayContainer button{
+    position:absolute;
+    top:50%;
+    right:1.5rem;
+    transform:translateY(-50%);
+}
+.inputContainer{
+    width:100%;
+    background-color: hsl(268, 75%, 9%);
+    border-radius:1rem;
+    padding:2rem;
+    margin-top:2rem;
+    border-bottom:0.35rem solid hsl(281, 89%, 26%);
+}
+.lengthContainer{
+    display:flex;
+    justify-content: space-between;
+    /* align-items:center; */
+    
+}
+.lengthContainer p:nth-child(1){
+    color:white;
+    font-size:1.5rem;
+}
+.lengthContainer p:nth-child(2){
+    color:white;
+    font-size:1.5rem;
+}
+.strengthSection{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    margin-top:1.75rem;
+    margin-bottom:2 rem; 
+}
+.strengthSection p{
+    color:white;
+    font-size:1.5rem;
+}
+.strengthSection div{
+    height:1rem;
+    width:1rem;
+    background-color:green;
+    border-radius:100%;
+   
+}
+.generateBtn {
+    margin-top:2rem;
+    width: 100%;
+    padding: 1rem 0;
+    background-color: hsl(285, 91%, 52%);
+    text-align: center;
+    border-radius: 0.75rem;
+    border-bottom: 0.35rem solid hsl(52, 100%, 62%);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: hsl(52, 100%, 62%);
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+
+  /* check-boxes styling */
+.checkboxSection{
+    margin-top:0.8rem;
+    display:flex;
+    gap:20px;
+    color:white;
+    font-size:1.3rem;
+}
+
+.checkboxSection input {
+    /* -webkit-appearance: none; */
+    appearance:none;
+    width:20px;
+    height:20px;
+    border:1px solid var(--vb-cyan);
+    border-radius:0.35rem;
+    position:relative;
+    cursor:pointer; 
+}
+
+.checkboxSection input:checked{
+    background-color: var(--vb-cyan2);
+}
+.checkboxSection input:checked::after{
+    content:'✔';
+    font-weight: bolder;
+    font-size:0.857rem;
+    position:absolute;
+     color:var(--dk-text);
+    top:3%;
+    left:20%;
+}
+
+/* slider - the final part*/
+.slider {
+    appearance: none;
+    width:100%;
+    background-color: var(--lt-violet);
+    /* position:relative; */
+    border-radius:1rem;
+    outline:none;
+    margin-top:1.5rem;
+    background-image:linear-gradient(var(--vb-violet),var(--vb-violet));
+    /* background-color: green; */
+    height:0.75rem;
+    cursor:pointer;
+    /* scroll-behavior: none; */
+    border:none;
+    outline:none;
+    margin-bottom:1.5rem;
+    background-repeat:no-repeat;
+    
+    
+}
+/* check about this code */
+/* background image ko background color replace nhi kar pata kya */
+.slider::-webkit-slider-thumb{
+    /* lines thumb ke across dikh rhi thi  */
+    position:relative;
+    /* position:absolute; */
+    /* height:80px; */
+    appearance: none;
+    height:2rem;
+    width:2rem;
+    border-radius: 50%;
+    background-color: var(--vb-yellow);
+    margin-top:-3px;
+    box-shadow: 0px 0px 20px 0px rgba(255, 229, 61, 0.50);
+    transition: all 100ms ease-in;
+}
+
+.slider:focus{
+   outline:3px solid var(--vb-yellow);
+    
+}
+.slider::-webkit-slider-thumb:hover{
+    background-color: var(--dk-violet);
+    outline:2px solid var(--vb-yellow);
+    box-shadow: 0px 0px 25px 5px rgba(255, 229, 61, 0.80);
+}
+.cpy-btn{
+    outline:none;
+    border:none;
+     background-color:transparent;
+
+}
+
+.showcase {
+    position: absolute;
+    background-color: var(--vb-violet2);
+    color: var(--vb-yellow);
+    font-size: 1.25rem;
+    top: -35px;
+    left: -25px;
+    padding: 5px 10px;
+    border-radius: 1rem;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: bottom;
+    transition: all 250ms ease-in-out;
+  }
+  
+  .showcase.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+ 
+
+ 
+  

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container ">
+        <h1>Password Generator</h1>
+        <div class="displayContainer">
+            <!-- custom attribute concept -->
+            <input type="text " readonly placeholder="password" PasswordDisplay >
+            <button data-copy class="cpy-btn">
+                <div data-copy-message class="showcase"></div>
+                <img src="assets/copy.svg" alt="" height="23" width="23">
+            </button>
+        </div>
+        <div class="inputContainer">
+            <div class="lengthContainer">
+                <p>Password length</p>
+                <p dataLengthNumber>10</p>
+            </div>
+            <!-- sliderbar -->
+            <input type="range" min="1" max="20" value="0" step="1" class="slider" id="myRange" data-lengthSlider>
+            <!-- checkboxes -->
+            <div class="checkboxSection">
+                <!-- why input id and label for should be the same -->
+                <input type="checkbox" id="uppercase" class="check" >
+                <label for="uppercase" >includes Uppercase Letters</label>
+                
+                
+                
+            </div>
+            <div class="checkboxSection">
+                <input type="checkbox" class="check" id="lowercase">
+                <label for="lowercase"> includes lowercase letters</label>
+            </div>
+            <div class="checkboxSection">
+                <input type="checkbox" class="check" id="numbers">
+                <label for="numbers"> includes numbers</label>
+            </div>
+            <div class="checkboxSection">
+                <input type="checkbox" class="check" id="symbols">
+                <label for="symbols"> includes symbols  </label>
+            </div>
+            <!-- strength section -->
+            <div class="strengthSection">
+                <p>strength</p>
+                <div class="dataindicator" data-Indicator></div>
+            </div>
+            <!-- generate Password -->
+             <button class="generateBtn">
+                Generate Password 
+             </button>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
+
+
+<!-- doubts
+1. CSS using DOM mein 5 methods ko acche se dekho , specially the method using setAttribute 
+2.event target dekh lo , last ke 2 classes ke ending ke 15 minutes mein hoga
+-->
